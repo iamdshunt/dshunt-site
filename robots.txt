@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dshunt.co.uk/sitemap.xml

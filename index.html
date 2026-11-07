@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DSHunt | Singer, Songwriter, Producer, London</title>
+<meta name="description" content="DSHunt: singer, songwriter and producer from London. Listen to Cold Cold Killer, Venom and Burning Up, plus instrumentals and songs featuring other artists.">
+<link rel="canonical" href="https://dshunt.co.uk/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DSHunt">
+<meta property="og:title" content="DSHunt">
+<meta property="og:description" content="DSHunt: singer, songwriter and producer from London. Listen to Cold Cold Killer, Venom and Burning Up, plus instrumentals and songs featuring other artists.">
+<meta property="og:url" content="https://dshunt.co.uk/">
+<meta property="og:image" content="https://dshunt.co.uk/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"DSHunt","url":"https://dshunt.co.uk/","email":"hello@dshunt.co.uk","sameAs":["https://open.spotify.com/artist/2AfpvulcaTODl9qtqYV7O4","https://music.apple.com/gb/artist/dshunt/662224867","https://www.instagram.com/iamdshunt/","https://www.tiktok.com/@iamdshunt"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Archivo:wght@400;500&display=swap">
+<style>
+/* Layout: four quiet sections on black. The photo and the covers do the talking; type stays small, white and widely spaced like the logo. */
+:root{
+  --black:#000; --ink:#f2f0ec; --muted:#8e8a84; --line:#222;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--black);color:var(--ink);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.label{font:500 .72rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+
+/* header: just the name and three words */
+header{position:absolute;inset:0 0 auto;z-index:5;padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;justify-content:flex-end;align-items:center;height:72px}
+nav{display:flex;gap:32px}
+nav a{font:500 .72rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--ink);opacity:.75;transition:opacity .2s}
+nav a:hover{opacity:1}
+
+/* hero: the photo, the logo, one line */
+.hero{position:relative;height:min(92vh,880px);min-height:540px;overflow:hidden}
+.hero .photo{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,transparent 20%,transparent 52%,#000 95%)}
+.hero .title{position:absolute;inset:auto 0 0;z-index:2;padding-bottom:clamp(40px,7vw,72px);padding-left:24px;padding-right:24px;display:grid;justify-items:center;gap:22px;text-align:center}
+.hero .logo{width:min(520px,82%);height:auto}
+.hero .roles{margin:0}
+
+/* sections */
+section.block{padding-block:clamp(88px,12vw,150px)}
+.head{display:grid;justify-items:center;gap:14px;margin-bottom:clamp(40px,6vw,64px);text-align:center}
+h2{font:500 clamp(1.5rem,3vw,1.9rem)/1 var(--serif);letter-spacing:.5em;text-transform:uppercase;margin:0;padding-left:.5em}
+
+/* music: three covers, nothing else */
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,32px)}
+@media (max-width:640px){.covers{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+.cover{display:grid;gap:16px;text-align:center}
+.cover .art{aspect-ratio:1;max-width:100%;overflow:hidden;background:#111}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,opacity .3s}
+@media (prefers-reduced-motion:no-preference){.cover:hover img{transform:scale(1.03)}}
+.cover .name{font:500 1.2rem/1 var(--serif);letter-spacing:.28em;text-transform:uppercase}
+.cover .year{font-size:.8rem;color:var(--muted);letter-spacing:.1em;margin-top:-8px}
+.stream{display:flex;justify-content:center;gap:36px;margin-top:clamp(40px,6vw,64px)}
+.stream a,.links a{font:500 .72rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--muted);transition:border-color .2s}
+.stream a:hover,.links a:hover{border-color:var(--ink)}
+
+/* instrumentals: one photo beside a plain track list */
+.inst{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;max-width:900px;margin:0 auto}
+@media (max-width:700px){.inst{grid-template-columns:1fr;max-width:440px}}
+.inst .art{aspect-ratio:1;overflow:hidden;background:#111}
+.inst .art img{width:100%;height:100%;object-fit:cover}
+.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tracks a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);transition:padding .2s}
+.tracks a:hover{padding-left:8px}
+.tracks .t{font:500 1.15rem/1 var(--serif);letter-spacing:.28em;text-transform:uppercase}
+.tracks .y{font-size:.8rem;color:var(--muted);letter-spacing:.1em}
+.inst .sub{margin:0 0 22px;color:var(--muted);font-size:.9rem;text-align:left}
+
+/* featured-artist songs: same as instrumentals, photo on the right */
+.inst.flip{align-items:start}
+.inst.flip .art{order:2;position:sticky;top:40px}
+@media (max-width:700px){.inst.flip .art{order:0;position:static}}
+.collabs{max-width:640px;margin:0 auto}
+.collabs .sub{text-align:center}
+.tracks .tw{display:grid;gap:8px;min-width:0}
+.tracks .f{font-size:.82rem;color:var(--muted);letter-spacing:.04em}
+
+/* about: one narrow column */
+.about{max-width:34rem;margin:0 auto;display:grid;gap:22px;text-align:center;color:#cfcbc5}
+.about p{margin:0}
+.portrait{width:min(380px,100%);height:auto;margin:0 auto 18px}
+
+/* contact */
+.contact{display:grid;justify-items:center;gap:28px;text-align:center}
+.email{font:500 clamp(1.3rem,4vw,2rem)/1.2 var(--serif);letter-spacing:.12em;user-select:all;overflow-wrap:anywhere}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px 36px}
+.note{font-size:.85rem;color:var(--muted);margin:0}
+
+footer{border-top:1px solid var(--line);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+footer a{border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--ink)}
+@media (max-width:760px){header .wrap{justify-content:center;height:auto;padding-top:22px} nav{flex-wrap:wrap;justify-content:center;gap:12px 20px} nav a{letter-spacing:.2em;font-size:.66rem}}
+@media (max-width:480px){h2{letter-spacing:.3em;padding-left:.3em}}
+@media (max-width:560px){footer .wrap{justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#music">Music</a>
+      <a href="#instrumentals">Instrumentals</a>
+      <a href="#featuring">Featuring</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="photo" src="images/hero-piano.jpg" width="1600" height="1600" alt="DSHunt leaning over a piano, looking down">
+    <div class="title">
+      <h1 style="margin:0"><img class="logo" src="images/logo-white.png" width="1200" height="205" alt="DSHunt"></h1>
+      <p class="label roles">Singer · Songwriter · Producer · London</p>
+    </div>
+  </section>
+
+  <section id="music" class="block">
+    <div class="wrap">
+      <div class="head"><h2>Music</h2></div>
+      <div class="covers">
+        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/cold-cold-killer/" target="_blank" rel="noopener">
+          <div class="art"><img src="images/cover-cold-cold-killer.jpg" width="640" height="640" alt="Cold Cold Killer cover"></div>
+          <span class="name">Cold Cold Killer</span><span class="year">2026</span>
+        </a>
+        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/venom/" target="_blank" rel="noopener">
+          <div class="art"><img src="images/cover-venom.jpg" width="640" height="640" alt="Venom cover"></div>
+          <span class="name">Venom</span><span class="year">2026</span>
+        </a>
+        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/burning-up/" target="_blank" rel="noopener">
+          <div class="art"><img src="images/cover-burning-up.jpg" width="640" height="640" alt="Burning Up cover"></div>
+          <span class="name">Burning Up</span><span class="year">2026</span>
+        </a>
+      </div>
+      <div class="stream">
+        <a href="https://open.spotify.com/artist/2AfpvulcaTODl9qtqYV7O4" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/gb/artist/dshunt/662224867" target="_blank" rel="noopener">Apple Music</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="instrumentals" class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Instrumentals</h2></div>
+      <div class="inst">
+        <div class="art"><img src="images/instrumentals.jpg" width="506" height="509" alt="DSHunt playing piano, black and white"></div>
+        <div>
+          <p class="sub">Piano and instrumental pieces, written and produced by DSHunt.</p>
+          <ul class="tracks">
+            <li><a href="https://music.apple.com/gb/album/rebirth-single/1676233799" target="_blank" rel="noopener"><span class="t">Rebirth</span><span class="y">2023</span></a></li>
+            <li><a href="https://music.apple.com/gb/album/made-single/1709925059" target="_blank" rel="noopener"><span class="t">Made</span><span class="y">2023</span></a></li>
+            <li><a href="https://music.apple.com/gb/album/black/1773938589?i=1773938590" target="_blank" rel="noopener"><span class="t">Black</span><span class="y">2024</span></a></li>
+            <li><a href="https://music.apple.com/gb/album/white/1781429152?i=1781429153" target="_blank" rel="noopener"><span class="t">White</span><span class="y">2024</span></a></li>
+            <li><a href="https://music.apple.com/gb/album/grey/1792420722?i=1792420723" target="_blank" rel="noopener"><span class="t">Grey</span><span class="y">2025</span></a></li>
+            <li><a href="https://music.apple.com/gb/album/red/1794284097?i=1794284101" target="_blank" rel="noopener"><span class="t">Red</span><span class="y">2025</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featuring" class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Featuring</h2></div>
+      <div class="inst flip">
+        <div class="art"><img src="images/featuring.jpg" width="1000" height="1000" alt="DSHunt playing a grand piano in the rain, St Paul's Cathedral behind"></div>
+        <div>
+        <p class="sub">Songs written by DSHunt, featuring other artists.</p>
+        <ul class="tracks">
+          <li><a href="https://open.spotify.com/track/38ekBSjwXLg9v8Ad5Cdp5y" target="_blank" rel="noopener"><span class="tw"><span class="t">Bleeding Heart</span><span class="f">Piano Version · feat. Olivia Lynn</span></span><span class="y">2026</span></a></li>
+          <li><a href="https://open.spotify.com/album/0XGLQLdhcpz9RbP0wMik9J" target="_blank" rel="noopener"><span class="tw"><span class="t">Little One</span><span class="f">feat. Carly Cunningham</span></span><span class="y">2026</span></a></li>
+          <li><a href="https://open.spotify.com/album/7EepK5FUv7gW8H3x9gJTAX" target="_blank" rel="noopener"><span class="tw"><span class="t">Stardust</span><span class="f">Piano Lounge Edit · feat. Vix Malone</span></span><span class="y">2026</span></a></li>
+          <li><a href="https://open.spotify.com/track/1h2OGqKe5FaB8lC1CRvOhx" target="_blank" rel="noopener"><span class="tw"><span class="t">Leading Lady</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></li>
+          <li><a href="https://open.spotify.com/track/3aCNqsuY0AkL6KdryVMAYT" target="_blank" rel="noopener"><span class="tw"><span class="t">Sunshine</span><span class="f">Drum &amp; Bass Edit · feat. Medzy &amp; Candice Dacosta</span></span><span class="y">2025</span></a></li>
+          <li><a href="https://open.spotify.com/album/3ajYEHu7Pnhoz3pPMexD6r" target="_blank" rel="noopener"><span class="tw"><span class="t">Sleep</span><span class="f">feat. Vix Malone</span></span><span class="y">2025</span></a></li>
+          <li><a href="https://open.spotify.com/track/4IffaM15kxn30rbrB7VANR" target="_blank" rel="noopener"><span class="tw"><span class="t">Clockwork</span><span class="f">feat. Medzy &amp; Olivia Lynn</span></span><span class="y">2025</span></a></li>
+          <li><a href="https://open.spotify.com/track/03qK7AwbmxkZUfIzGJ8JsE" target="_blank" rel="noopener"><span class="tw"><span class="t">Snow</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></li>
+          <li><a href="https://open.spotify.com/album/4gTmnJJ5OrcEtBIkJpQyx5" target="_blank" rel="noopener"><span class="tw"><span class="t">Day I Die</span><span class="f">feat. Vix Malone</span></span><span class="y">2023</span></a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>About</h2></div>
+      <div class="about">
+        <p>DSHunt is a singer, songwriter and producer from London and the South East of England.</p>
+        <p>Every song starts on piano or guitar, then gets taken out onto the streets: spoken-sung verses, real places and dark hooks, somewhere between The Streets and late-night indie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="block" style="padding-top:0">
+    <div class="wrap contact">
+      <div class="head" style="margin-bottom:0"><h2>Contact</h2></div>
+      <p class="email"><a href="mailto:hello@dshunt.co.uk">hello@dshunt.co.uk</a></p>
+      <p class="note">Bookings, collaborations, sync and press.</p>
+      <div class="links">
+        <a href="https://www.tiktok.com/@iamdshunt" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/iamdshunt/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://open.spotify.com/artist/2AfpvulcaTODl9qtqYV7O4" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/gb/artist/dshunt/662224867" target="_blank" rel="noopener">Apple Music</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 DSHunt</span>
+    <span>Also live with <a href="https://www.facebook.com/jamnesiaukband" target="_blank" rel="noopener">Jamnesia</a></span>
+  </div>
+</footer>
+</body>
+</html>
