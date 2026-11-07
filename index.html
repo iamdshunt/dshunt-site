@@ -80,7 +80,7 @@ h2{font:500 clamp(1.5rem,3vw,1.9rem)/1 var(--serif);letter-spacing:.5em;text-tra
 .inst .art{aspect-ratio:1;overflow:hidden;background:#111}
 .inst .art img{width:100%;height:100%;object-fit:cover}
 .tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.tracks a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);transition:padding .2s}
+.tracks a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;transition:padding .2s}
 .tracks a:hover{padding-left:8px}
 .tracks .t{font:500 1.15rem/1 var(--serif);letter-spacing:.28em;text-transform:uppercase}
 .tracks .y{font-size:.8rem;color:var(--muted);letter-spacing:.1em}
@@ -94,6 +94,23 @@ h2{font:500 clamp(1.5rem,3vw,1.9rem)/1 var(--serif);letter-spacing:.5em;text-tra
 .collabs .sub{text-align:center}
 .tracks .tw{display:grid;gap:8px;min-width:0}
 .tracks .f{font-size:.82rem;color:var(--muted);letter-spacing:.04em}
+
+/* in-page players: a small play button opens a compact Spotify player under the song */
+.tracks li{border-bottom:1px solid var(--line)}
+.tracks .row{display:flex;align-items:center;gap:14px}
+.tracks .row a{flex:1;border-bottom:0;min-width:0}
+.play{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--muted);background:none;color:var(--ink);display:inline-grid;place-items:center;cursor:pointer;padding:0;transition:border-color .2s,background .2s,color .2s}
+.play:hover{border-color:var(--ink)}
+.play[aria-expanded="true"]{background:var(--ink);color:#000;border-color:var(--ink)}
+.play svg{width:12px;height:12px;fill:currentColor}
+.play .i-stop,.play[aria-expanded="true"] .i-play{display:none}
+.play[aria-expanded="true"] .i-stop{display:block}
+.play:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.play-txt{width:auto;height:auto;border-radius:999px;padding:9px 18px;gap:10px;grid-auto-flow:column;justify-self:center;font:500 .68rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase}
+.cover-wrap{display:grid;gap:18px;align-content:start}
+.embed{padding:0 0 16px}
+.cover-wrap .embed{padding:0}
+.embed iframe{display:block;width:100%;height:80px;border:0;border-radius:12px;background:#111}
 
 /* about: one narrow column */
 .about{max-width:34rem;margin:0 auto;display:grid;gap:22px;text-align:center;color:#cfcbc5}
@@ -142,18 +159,18 @@ footer a:hover{color:var(--ink)}
     <div class="wrap">
       <div class="head"><h2>Music</h2></div>
       <div class="covers">
-        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/cold-cold-killer/" target="_blank" rel="noopener">
+        <div class="cover-wrap"><a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/cold-cold-killer/" target="_blank" rel="noopener">
           <div class="art"><img src="images/cover-cold-cold-killer.jpg" width="640" height="640" alt="Cold Cold Killer cover"></div>
           <span class="name">Cold Cold Killer</span><span class="year">2026</span>
-        </a>
-        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/venom/" target="_blank" rel="noopener">
+        </a><button type="button" class="play play-txt" data-sp="track/1Y3y17us5WlIwSJ9O3v9UW" aria-label="Play Cold Cold Killer" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg><span>Play</span></button></div>
+        <div class="cover-wrap"><a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/venom/" target="_blank" rel="noopener">
           <div class="art"><img src="images/cover-venom.jpg" width="640" height="640" alt="Venom cover"></div>
           <span class="name">Venom</span><span class="year">2026</span>
-        </a>
-        <a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/burning-up/" target="_blank" rel="noopener">
+        </a><button type="button" class="play play-txt" data-sp="track/2yUUs6Iz2wt3jsROQiaUb5" aria-label="Play Venom" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg><span>Play</span></button></div>
+        <div class="cover-wrap"><a class="cover" href="https://distrokid.com/hyperfollow/dshunt1/burning-up/" target="_blank" rel="noopener">
           <div class="art"><img src="images/cover-burning-up.jpg" width="640" height="640" alt="Burning Up cover"></div>
           <span class="name">Burning Up</span><span class="year">2026</span>
-        </a>
+        </a><button type="button" class="play play-txt" data-sp="track/7EgIkTzqrMjxtX8LLv1Pd5" aria-label="Play Burning Up" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg><span>Play</span></button></div>
       </div>
       <div class="stream">
         <a href="https://open.spotify.com/artist/2AfpvulcaTODl9qtqYV7O4" target="_blank" rel="noopener">Spotify</a>
@@ -170,12 +187,12 @@ footer a:hover{color:var(--ink)}
         <div>
           <p class="sub">Piano and instrumental pieces, written and created by DSHunt.</p>
           <ul class="tracks">
-            <li><a href="https://music.apple.com/gb/album/rebirth-single/1676233799" target="_blank" rel="noopener"><span class="t">Rebirth</span><span class="y">2023</span></a></li>
-            <li><a href="https://music.apple.com/gb/album/made-single/1709925059" target="_blank" rel="noopener"><span class="t">Made</span><span class="y">2023</span></a></li>
-            <li><a href="https://music.apple.com/gb/album/black/1773938589?i=1773938590" target="_blank" rel="noopener"><span class="t">Black</span><span class="y">2024</span></a></li>
-            <li><a href="https://music.apple.com/gb/album/white/1781429152?i=1781429153" target="_blank" rel="noopener"><span class="t">White</span><span class="y">2024</span></a></li>
-            <li><a href="https://music.apple.com/gb/album/grey/1792420722?i=1792420723" target="_blank" rel="noopener"><span class="t">Grey</span><span class="y">2025</span></a></li>
-            <li><a href="https://music.apple.com/gb/album/red/1794284097?i=1794284101" target="_blank" rel="noopener"><span class="t">Red</span><span class="y">2025</span></a></li>
+            <li><div class="row"><button type="button" class="play" data-sp="album/4abmWJ98enN92NpH5fLsYC" aria-label="Play Rebirth" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/rebirth-single/1676233799" target="_blank" rel="noopener"><span class="t">Rebirth</span><span class="y">2023</span></a></div></li>
+            <li><div class="row"><button type="button" class="play" data-sp="album/4k1l9B6rzmar57mrLnvagS" aria-label="Play Made" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/made-single/1709925059" target="_blank" rel="noopener"><span class="t">Made</span><span class="y">2023</span></a></div></li>
+            <li><div class="row"><button type="button" class="play" data-sp="track/19MYyXCMyrqT4nmG2olfiH" aria-label="Play Black" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/black/1773938589?i=1773938590" target="_blank" rel="noopener"><span class="t">Black</span><span class="y">2024</span></a></div></li>
+            <li><div class="row"><button type="button" class="play" data-sp="track/292syZ2M6tX4vXcaeQ9QCO" aria-label="Play White" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/white/1781429152?i=1781429153" target="_blank" rel="noopener"><span class="t">White</span><span class="y">2024</span></a></div></li>
+            <li><div class="row"><button type="button" class="play" data-sp="album/1fXuOcBZSjQNQmLGgh1iq9" aria-label="Play Grey" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/grey/1792420722?i=1792420723" target="_blank" rel="noopener"><span class="t">Grey</span><span class="y">2025</span></a></div></li>
+            <li><div class="row"><button type="button" class="play" data-sp="track/6TUF40uSNUtFWUENb0KMEe" aria-label="Play Red" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://music.apple.com/gb/album/red/1794284097?i=1794284101" target="_blank" rel="noopener"><span class="t">Red</span><span class="y">2025</span></a></div></li>
           </ul>
         </div>
       </div>
@@ -190,15 +207,15 @@ footer a:hover{color:var(--ink)}
         <div>
         <p class="sub">Songs written by DSHunt, featuring other artists.</p>
         <ul class="tracks">
-          <li><a href="https://open.spotify.com/track/38ekBSjwXLg9v8Ad5Cdp5y" target="_blank" rel="noopener"><span class="tw"><span class="t">Bleeding Heart</span><span class="f">Piano Version · feat. Olivia Lynn</span></span><span class="y">2026</span></a></li>
-          <li><a href="https://open.spotify.com/album/0XGLQLdhcpz9RbP0wMik9J" target="_blank" rel="noopener"><span class="tw"><span class="t">Little One</span><span class="f">feat. Carly Cunningham</span></span><span class="y">2026</span></a></li>
-          <li><a href="https://open.spotify.com/album/7EepK5FUv7gW8H3x9gJTAX" target="_blank" rel="noopener"><span class="tw"><span class="t">Stardust</span><span class="f">Piano Lounge Edit · feat. Vix Malone</span></span><span class="y">2026</span></a></li>
-          <li><a href="https://open.spotify.com/track/1h2OGqKe5FaB8lC1CRvOhx" target="_blank" rel="noopener"><span class="tw"><span class="t">Leading Lady</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></li>
-          <li><a href="https://open.spotify.com/track/3aCNqsuY0AkL6KdryVMAYT" target="_blank" rel="noopener"><span class="tw"><span class="t">Sunshine</span><span class="f">Drum &amp; Bass Edit · feat. Medzy &amp; Candice Dacosta</span></span><span class="y">2025</span></a></li>
-          <li><a href="https://open.spotify.com/album/3ajYEHu7Pnhoz3pPMexD6r" target="_blank" rel="noopener"><span class="tw"><span class="t">Sleep</span><span class="f">feat. Vix Malone</span></span><span class="y">2025</span></a></li>
-          <li><a href="https://open.spotify.com/track/4IffaM15kxn30rbrB7VANR" target="_blank" rel="noopener"><span class="tw"><span class="t">Clockwork</span><span class="f">feat. Medzy &amp; Olivia Lynn</span></span><span class="y">2025</span></a></li>
-          <li><a href="https://open.spotify.com/track/03qK7AwbmxkZUfIzGJ8JsE" target="_blank" rel="noopener"><span class="tw"><span class="t">Snow</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></li>
-          <li><a href="https://open.spotify.com/album/4gTmnJJ5OrcEtBIkJpQyx5" target="_blank" rel="noopener"><span class="tw"><span class="t">Day I Die</span><span class="f">feat. Vix Malone</span></span><span class="y">2023</span></a></li>
+          <li><div class="row"><button type="button" class="play" data-sp="track/38ekBSjwXLg9v8Ad5Cdp5y" aria-label="Play Bleeding Heart" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/track/38ekBSjwXLg9v8Ad5Cdp5y" target="_blank" rel="noopener"><span class="tw"><span class="t">Bleeding Heart</span><span class="f">Piano Version · feat. Olivia Lynn</span></span><span class="y">2026</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="album/0XGLQLdhcpz9RbP0wMik9J" aria-label="Play Little One" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/album/0XGLQLdhcpz9RbP0wMik9J" target="_blank" rel="noopener"><span class="tw"><span class="t">Little One</span><span class="f">feat. Carly Cunningham</span></span><span class="y">2026</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="album/7EepK5FUv7gW8H3x9gJTAX" aria-label="Play Stardust" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/album/7EepK5FUv7gW8H3x9gJTAX" target="_blank" rel="noopener"><span class="tw"><span class="t">Stardust</span><span class="f">Piano Lounge Edit · feat. Vix Malone</span></span><span class="y">2026</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="track/1h2OGqKe5FaB8lC1CRvOhx" aria-label="Play Leading Lady" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/track/1h2OGqKe5FaB8lC1CRvOhx" target="_blank" rel="noopener"><span class="tw"><span class="t">Leading Lady</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="track/3aCNqsuY0AkL6KdryVMAYT" aria-label="Play Sunshine" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/track/3aCNqsuY0AkL6KdryVMAYT" target="_blank" rel="noopener"><span class="tw"><span class="t">Sunshine</span><span class="f">Drum &amp; Bass Edit · feat. Medzy &amp; Candice Dacosta</span></span><span class="y">2025</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="album/3ajYEHu7Pnhoz3pPMexD6r" aria-label="Play Sleep" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/album/3ajYEHu7Pnhoz3pPMexD6r" target="_blank" rel="noopener"><span class="tw"><span class="t">Sleep</span><span class="f">feat. Vix Malone</span></span><span class="y">2025</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="track/4IffaM15kxn30rbrB7VANR" aria-label="Play Clockwork" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/track/4IffaM15kxn30rbrB7VANR" target="_blank" rel="noopener"><span class="tw"><span class="t">Clockwork</span><span class="f">feat. Medzy &amp; Olivia Lynn</span></span><span class="y">2025</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="track/03qK7AwbmxkZUfIzGJ8JsE" aria-label="Play Snow" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/track/03qK7AwbmxkZUfIzGJ8JsE" target="_blank" rel="noopener"><span class="tw"><span class="t">Snow</span><span class="f">feat. Olivia Lynn</span></span><span class="y">2025</span></a></div></li>
+          <li><div class="row"><button type="button" class="play" data-sp="album/4gTmnJJ5OrcEtBIkJpQyx5" aria-label="Play Day I Die" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-play" d="M5 3.5v9l7.5-4.5z"/><path class="i-stop" d="M4.5 4.5h7v7h-7z"/></svg></button><a href="https://open.spotify.com/album/4gTmnJJ5OrcEtBIkJpQyx5" target="_blank" rel="noopener"><span class="tw"><span class="t">Day I Die</span><span class="f">feat. Vix Malone</span></span><span class="y">2023</span></a></div></li>
         </ul>
         </div>
       </div>
@@ -236,5 +253,23 @@ footer a:hover{color:var(--ink)}
     <span>Also live with <a href="https://www.facebook.com/jamnesiaukband" target="_blank" rel="noopener">Jamnesia</a></span>
   </div>
 </footer>
+<script>
+// One player at a time: tapping play loads Spotify's embed under that song; tapping again (or another song) closes it.
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.play'); if(!b) return;
+  var open=b.getAttribute('aria-expanded')==='true';
+  document.querySelectorAll('.play[aria-expanded="true"]').forEach(function(x){x.setAttribute('aria-expanded','false');});
+  document.querySelectorAll('.embed').forEach(function(x){x.remove();});
+  if(open) return;
+  var d=document.createElement('div'); d.className='embed';
+  var f=document.createElement('iframe');
+  f.src='https://open.spotify.com/embed/'+b.dataset.sp+'?utm_source=generator&theme=0';
+  f.title=b.getAttribute('aria-label').replace('Play ','')+' on Spotify';
+  f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+  f.loading='lazy'; d.appendChild(f);
+  var host=b.closest('li')||b.closest('.cover-wrap'); host.appendChild(d);
+  b.setAttribute('aria-expanded','true');
+});
+</script>
 </body>
 </html>
